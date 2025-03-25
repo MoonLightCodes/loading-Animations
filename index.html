@@ -25,7 +25,7 @@
       body > div:nth-child(1) {
         width: 110px;
         height: 110px;
-        background-color: rgba(0, 255, 255, 0.5);
+        background-color: rgba(20, 118, 27, 0.938);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -46,13 +46,13 @@
       body > div:nth-child(1) > div > div:nth-child(2) {
         width: 30px;
         height: 30px;
-        background-color: rgba(255, 255, 255);
+        background-color: rgb(21, 0, 255);
         border-radius: 50%;
       }
       body > div:nth-child(2) {
         width: 100px;
         height: 100px;
-        background-color: rgb(163, 58, 234);
+        background-color: rgb(65, 4, 106);
         border-radius: 50%;
         display: flex;
         justify-content: space-evenly;
@@ -72,7 +72,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        background-color: blueviolet;
+        background-color: rgb(0, 0, 0);
         border-radius: 50%;
         animation: roter 2s linear infinite;
       }
@@ -101,7 +101,7 @@
       body > div:nth-child(4) {
         width: 100px;
         height: 100px;
-        background-color: rgb(232, 232, 22);
+        background-color:  rgba(128, 255, 0, 0.735);
         border-radius: 50%;
         display: flex;
         justify-content: space-evenly;
@@ -110,8 +110,8 @@
       body > div:nth-child(4) div {
         width: 20px;
         height: 40px;
-        background-color: chartreuse;
-        /* border-radius: 100%; */
+        background-color: rgb(255, 255, 1);
+        border-radius:5px;
         animation: size2 1s linear infinite;
       }
       body > div:nth-child(4) div:nth-child(1) {
@@ -135,9 +135,9 @@
       }
       body > div:nth-child(5) div {
         position: absolute;
-        width: 10px;
-        height: 10px;
-        background: teal; /* Color for the elements */
+        width: 20px;
+        height: 20px;
+        background: rgb(0, 70, 70); /* Color for the elements */
         border-radius: 50%; /* Makes the elements circular */
         text-align: center;
         line-height: 40px; /* Centers the text inside */
@@ -153,26 +153,31 @@
       body > div:nth-child(5) div:nth-child(2) {
         top: 50%;
         left: 50%;
+        background: rgb(0, 90, 90);
         transform: translate(-50%, -50%) rotate(60deg) translate(40px);
       }
       body > div:nth-child(5) div:nth-child(3) {
         top: 50%;
         left: 50%;
+        background: rgb(0, 110, 110);
         transform: translate(-50%, -50%) rotate(120deg) translate(40px);
       }
       body > div:nth-child(5) div:nth-child(4) {
         top: 50%;
         left: 50%;
+        background: rgb(0, 130, 130);
         transform: translate(-50%, -50%) rotate(180deg) translate(40px);
       }
       body > div:nth-child(5) div:nth-child(5) {
         top: 50%;
         left: 50%;
+        background: rgb(0, 150, 150);
         transform: translate(-50%, -50%) rotate(240deg) translate(40px);
       }
       body > div:nth-child(5) div:nth-child(6) {
         top: 50%;
         left: 50%;
+        background: rgb(0, 170, 170);
         transform: translate(-50%, -50%) rotate(300deg) translate(40px);
       }
       body > div:nth-child(6) {
@@ -184,11 +189,12 @@
         height: 100%;
         object-fit: contain;
         border-radius: 50%;
-        animation: roter 2s linear infinite reverse;
+        animation: roter 2s linear infinite ;
       }
       body > div:nth-child(7)::before {
         font-weight: bolder;
         left: 50%;
+        color: white;
         transform: translate(-50%, 0%);
         position: absolute;
         content: "L O A D I N G . . . ";
@@ -201,14 +207,14 @@
         padding: 10px;
         width: 90%;
         height: 20px;
-        background-color: #f5f5f5;
+        background-color: #000000;
         border-radius: 20px;
         position: relative;
       }
       body > div:nth-child(7) div {
         width: 100%;
         height: 20px;
-        background-color: rgb(16, 231, 130);
+        background-color: rgb(31, 140, 159);
         border-radius: 20px;
         animation: size3 3s linear infinite;
       }
@@ -220,7 +226,7 @@
         gap: 20px;
         width: 100px;
         height: 100px;
-        background-color: #ae0beaca;
+        background-color: #920101;
         border-radius: 50%;
       }
       body > div:nth-child(8) div {
@@ -229,19 +235,19 @@
         left: 50%;
         width: 10px;
         height: 20px;
-        background-color: #671485;
-        animation: dim 2s linear infinite;
+        /* background-color: #671485; */
+        animation: dim 1s linear infinite;
       }
 
       @keyframes dim{
         0%{
-          opacity: 0;
+          background-color: rgb(255, 0, 0);
         }
         50%{
-          opacity: 1;
+          background-color: rgb(70, 0, 0);
         }
         100%{
-          opacity: 0;
+          background-color: rgb(0, 0, 0);
         }
       }
 
@@ -287,7 +293,7 @@
           height: 20px;
         }
       }
-      @keyframes size1j {
+      @keyframes size1 {
         0% {
           width: 30px;
           height: 30px;
@@ -378,7 +384,6 @@
       <div></div>
       <div></div>
       <div></div>
-      <div></div>
       
     </div>
 
@@ -393,7 +398,8 @@
         allPE.style.height = `100px`;
         allE.forEach((v, i) => {
           v.style.height = `30px`;
-          v.style.animationDelay = `${0.5*(i/n)}s`;
+          v.style.width = `8px`
+          v.style.animationDelay = `${(i/n)+1}s`;
           v.style.transform = `translate(-50%,-50%) rotate(${
             i * (360 / n)
           }deg) translate(0,30px)`;
