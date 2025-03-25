@@ -16,6 +16,11 @@
         align-items: center;
         height: auto;
         gap: 10px;
+        overflow: scroll;
+        scrollbar-width: none;
+      }
+      body::-webkit-scrollbar {
+        display: none; /* For Chrome, Edge, and Safari */
       }
       body > div:nth-child(1) {
         width: 110px;
@@ -168,8 +173,7 @@
       body > div:nth-child(5) div:nth-child(6) {
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(300deg) translate(40px)
-          
+        transform: translate(-50%, -50%) rotate(300deg) translate(40px);
       }
       body > div:nth-child(6) {
         width: 100px;
@@ -182,17 +186,17 @@
         border-radius: 50%;
         animation: roter 2s linear infinite reverse;
       }
-      body > div:nth-child(7)::before{
+      body > div:nth-child(7)::before {
         font-weight: bolder;
         left: 50%;
-        transform:translate(-50%,0%);
+        transform: translate(-50%, 0%);
         position: absolute;
-        content: 'L O A D I N G . . . ';
+        content: "L O A D I N G . . . ";
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      body > div:nth-child(7){
+      body > div:nth-child(7) {
         margin: 30px;
         padding: 10px;
         width: 90%;
@@ -201,27 +205,60 @@
         border-radius: 20px;
         position: relative;
       }
-      body > div:nth-child(7) div{
+      body > div:nth-child(7) div {
         width: 100%;
         height: 20px;
         background-color: rgb(16, 231, 130);
         border-radius: 20px;
         animation: size3 3s linear infinite;
       }
-      @keyframes size3{
+      body > div:nth-child(8) {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: #ae0beaca;
+        border-radius: 50%;
+      }
+      body > div:nth-child(8) div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 20px;
+        background-color: #671485;
+        animation: dim 2s linear infinite;
+      }
+
+      @keyframes dim{
         0%{
-          width: 0%;
-        }
-        25%{
-          width: 50%;
+          opacity: 0;
         }
         50%{
-          width: 100%;
-        }
-        75%{
-          width: 50%;
+          opacity: 1;
         }
         100%{
+          opacity: 0;
+        }
+      }
+
+      @keyframes size3 {
+        0% {
+          width: 0%;
+        }
+        25% {
+          width: 50%;
+        }
+        50% {
+          width: 100%;
+        }
+        75% {
+          width: 50%;
+        }
+        100% {
           width: 0%;
         }
       }
@@ -250,7 +287,7 @@
           height: 20px;
         }
       }
-      @keyframes size1 {
+      @keyframes size1j {
         0% {
           width: 30px;
           height: 30px;
@@ -329,5 +366,39 @@
     <div>
       <div></div>
     </div>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      
+    </div>
+
+    <script>
+      const allPE = document.querySelector("body div:nth-child(8)");
+      const allE = allPE.querySelectorAll("*");
+      console.log(allE);
+      document.addEventListener("DOMContentLoaded", () => {
+        let n = allE.length;
+        // allPE.style.animation = `roter 3s linear infinite`;
+        allPE.style.width = `100px`;
+        allPE.style.height = `100px`;
+        allE.forEach((v, i) => {
+          v.style.height = `30px`;
+          v.style.animationDelay = `${0.5*(i/n)}s`;
+          v.style.transform = `translate(-50%,-50%) rotate(${
+            i * (360 / n)
+          }deg) translate(0,30px)`;
+        });
+      });
+    </script>
   </body>
 </html>
